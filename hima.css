@@ -1,0 +1,123 @@
+/* hima.css - 暇つぶしカウンター専用のスタイル */
+
+/* ... 既存のスタイル ... */
+
+/* ★ここから追加★ */
+
+/* hima.css - 暇つぶしカウンター専用のスタイル */
+
+/* .container などは style.css で共通化されているはずなので、
+   ここではカウンター部分に特化したスタイルを記述 */
+
+body {
+    color: #333;
+}
+
+.container h2{
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+.container {
+    /* 必要であれば、このページのコンテナに個別のスタイルを適用 */
+    text-align: center; /* カウンターを中央寄せにするため */
+}
+
+.counter-area {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 2px dashed #a0a0a0; /* 点線で囲む */
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: inline-block; /* 内容に合わせて幅を調整 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.counter-display {
+    font-size: 4em; /* 数字を大きく */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* シンプルなフォント */
+    min-width: 100px; /* 数字が大きくなってもレイアウトが崩れないように */
+    display: inline-block; /* 中央寄せ用 */
+}
+
+.counter-button {
+    background-color: #4CAF50; /* 緑色のボタン */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.counter-button:hover {
+    background-color: #45a049;
+}
+
+.counter-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(2px);
+}
+
+/* 共通の戻るボタン（style.css か nippo.css などから流用） */
+.back-to-top {
+    display: block;
+    margin-top: 40px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.game-list {
+    list-style: none; /* デフォルトのリストマーカーを消す */
+    padding: 0;
+    margin-top: 30px;
+    text-align: center; /* リストを中央寄せ */
+}
+
+.game-list li {
+    margin-bottom: 15px;
+}
+
+.game-list a {
+    display: inline-block; /* aタグをブロック要素にする */
+    padding: 10px 20px;
+    background-color: #e3f4ff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.game-list a:hover {
+    background-color: #ddd;
+}
+
+.container p {
+    font-size: 0.9em;
+    text-align: center;
+    max-width: 220px;
+    margin: 0 auto;
+}
+/* ★ここまで追加★ */
