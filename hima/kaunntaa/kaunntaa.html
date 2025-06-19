@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>意味のないカウンター</title>
+    <link rel="stylesheet" href="kaunntaa.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <nav class="nav-menu" id="nav-menu">
+        <ul>
+            <li><a href="../../nippo.html">日報を読む</a></li>
+            <li><a href="#">ギャラリーを見る(工事中)</a></li>
+            <li><a href="../../my_thread.html">ひとりスレッド</a></li>
+            <li><a href="../../hima.html">ひまつぶし</a></li>
+            <li><a href="../../kokoha.html">ここは何？</a></li>
+
+        </ul>
+    </nav>
+
+    <h2>意味のないカウンター</h2>
+    <p>めざせ！たくさんの訪問者</p>
+
+    <div class="visitor-counter-area">
+        <p>あなたは <span id="siteVisitorCountDisplay" class="visitor-counter-number"></span> 人目の訪問者です！</p>
+        <button class="counter-button" id="incrementButton">ポチッとな！</button>
+    </div>
+
+            <a href="../../hima.html" class="back-to-top">一覧へ戻る</a>
+
+    <script src="../../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const siteVisitorCountDisplay = document.getElementById('siteVisitorCountDisplay');
+            const incrementButton = document.getElementById('incrementButton');
+
+            // カウンターの初期値
+            // LocalStorageから読み込む処理を削除し、常に0から開始
+            let count = 0; 
+
+            // 要素が存在するか確認
+            if (siteVisitorCountDisplay && incrementButton) {
+                // 初期表示（常に0から開始）
+                siteVisitorCountDisplay.textContent = count; 
+
+                // 「ポチッとな！」ボタンのクリックイベント
+                incrementButton.addEventListener('click', () => {
+                    count++; // カウントを1増やす
+                    siteVisitorCountDisplay.textContent = count; // 表示を更新
+                    // LocalStorageへの保存処理も削除
+                });
+            }
+        });
+    </script>
+</body>
+</html>

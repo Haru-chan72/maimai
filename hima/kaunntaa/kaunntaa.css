@@ -1,0 +1,125 @@
+/* kaunntaa.css */
+
+body {
+    background-color: #f0f0f0; /* 全体の背景色 */
+    display: flex; /* カウンターを中央に寄せるため */
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 水平方向中央寄せ */
+    justify-content: center; /* 垂直方向中央寄せ */
+    min-height: 100vh; /* 画面全体を占めるように */
+    margin: 0;
+    font-family: sans-serif; /* デフォルトのフォント */
+    padding: 20px; /* 余白 */
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+/* --- 既存の「ポチッとな！」カウンターのスタイル --- */
+.counter-area {
+    margin-bottom: 40px; /* 訪問者カウンターとの間にスペース */
+    padding: 30px 40px;
+    background-color: #E0FFFF; /* 淡い水色系の背景 */
+    border: 2px solid #6688AA; /* 濃いめの青い枠線 */
+    border-radius: 0px;
+    box-shadow: none;
+    display: inline-block;
+    font-size: 1.1em;
+    color: #333;
+    max-width: 480px;
+    text-align: center;
+    font-family: 'MS Gothic', 'メイリオ', sans-serif;
+}
+
+.counter-display {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3.5em;
+    font-weight: normal;
+    color: #222;
+    background-color: #CCCCFF;
+    border: 1px solid #7788AA;
+    padding: 8px 15px;
+    margin: 0 auto 25px auto;
+    display: inline-block;
+    min-width: 150px;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+    letter-spacing: 2px;
+}
+
+.counter-button {
+    background-color: #B0C4DE;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 25px;
+    font-size: 1.2em;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-bottom: 2px solid #696969;
+    border-right: 2px solid #696969;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    box-shadow: none;
+    font-family: 'MS Gothic', 'メイリオ', sans-serif;
+    letter-spacing: 1px;
+}
+
+.counter-button:hover {
+    background-color: #A0B0CC;
+}
+
+.counter-button:active {
+    background-color: #8899AA;
+    border-top: 2px solid #696969;
+    border-left: 2px solid #696969;
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+    transform: translateY(1px) translateX(1px);
+}
+
+.back-to-top {
+    margin-top:  50px;
+    margin-bottom: 60px;
+}
+
+.back-to-top:hover {
+    color: #00246b;
+}
+
+/* --- ★ここから追加：訪問者カウンターのスタイル★ --- */
+.visitor-counter-area {
+    text-align: center;
+    padding: 15px 25px;
+    background-color: #E0FFFF; /* レトロカウンターと同じ淡い水色系の背景 */
+    border: 2px solid #6688AA; /* レトロカウンターと同じ濃いめの青い枠線 */
+    border-radius: 0px;
+    box-shadow: none;
+    max-width: 500px; /* 幅を調整 */
+    font-size: 1.1em;
+    color: #333;
+    font-family: 'MS Gothic', 'メイリオ', sans-serif;
+    line-height: 1.5;
+}
+
+/* 訪問者カウンターの数字部分のスタイル */
+.visitor-counter-area .visitor-counter-number { /* idではなくclass名を使うことにしました */
+    font-weight: normal;
+    color: #222;
+    font-size: 1.5em;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #CCCCFF;
+    border: 1px solid #7788AA;
+    padding: 3px 8px;
+    display: inline-block;
+    min-width: 60px; /* 桁数が増えても崩れないように最低幅を設定 */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+    letter-spacing: 1;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+/* --- ★ここまで追加：訪問者カウンターのスタイル★ --- */
