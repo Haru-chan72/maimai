@@ -1,0 +1,112 @@
+/* thread.css - マイスレッド専用のスタイル */
+
+body {
+    background-color: #f0f0f0; /* 少し暗めの背景色で落ち着いた印象に */
+    color: #333;
+    padding-top: 60px;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff; /* 白い背景で清潔感を出す */
+    border-radius: 0px; /* ★角を完全に直角に★ */
+    box-shadow: none; /* ★影をなくす★ */
+    border: 1px solid #ccc; /* 全体的な囲いをハッキリと */
+}
+
+.container h1 {
+    font-size: 1.8em;
+    color: #444; /* タイトル色を落ち着かせる */
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ccc; /* ★ボーダー色も統一感を出す★ */
+    padding-bottom: 15px;
+}
+
+.container h2 {
+    font-size: 1.5em;
+    color: #555; /* スレッドのサブタイトル色も落ち着かせる */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* 薄い区切り線 */
+    padding-bottom: 10px;
+}
+
+/* 月別アーカイブリストのスタイル */
+.thread-archive-list ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.thread-archive-list li {
+    border-bottom: 1px solid #eee; /* 薄い区切り線 */
+    padding: 12px 0;
+}
+
+.thread-archive-list li:last-child {
+    border-bottom: none;
+}
+
+.thread-archive-list a {
+    display: block;
+    text-decoration: none;
+    color: #337ab7; /* やや落ち着いた青に */
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.thread-archive-list a:hover {
+    color: #23527c;
+}
+
+/* --- 掲示板風スレッドのセクション --- */
+.board-thread-section {
+    border-radius: 0px; /* ★角を完全に直角に★ */
+    padding: 20px;
+    margin-bottom: 30px;
+
+    box-shadow: none; /* ★影をなくす★ */
+}
+
+.board-thread-section h2 {
+    font-size: 1.6em;
+    color: #333; /* スレッドタイトル色を一般的な色に */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd; /* ★太めの区切り線★ */
+}
+
+/* --- 各投稿（レス）のスタイル --- */
+.thread-post {
+    background-color: #ffffff; /* レスの背景色を白に統一 */
+    border: 1px solid #e0e0e0; /* ★ボーダーをシンプルなグレーに★ */
+    border-radius: 0px; /* ★角を完全に直角に★ */
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: none; /* ★影をなくす★ */
+    position: relative;
+}
+
+.thread-post.original-post {
+    background-color: #fafafa; /* 親レスは少しだけ背景色を変える */
+    border-color: #dddddd; /* 親レスのボーダーを少し濃く */
+}
+
+.thread-post:last-child {
+    margin-bottom: 0;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee; 
+}

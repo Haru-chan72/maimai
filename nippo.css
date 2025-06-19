@@ -1,0 +1,120 @@
+/* nippo.css - 日報ページ専用のスタイル */
+
+/* 全体的なスタイル */
+body {
+    font-family: "kikai",sans-serif;
+    background-color: #FFFFFE; /* 全体的な背景色を少し明るく */
+    color: #333;
+    padding-top: 60px; /* 固定ヘッダーの高さ分、上からの余白 */
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+/* コンテンツのコンテナ */
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* 上下20px、左右中央揃え */
+    padding: 25px; /* 内側の余白を少し増やす */
+    border-radius: 10px; /* 角を丸くする */
+}
+
+/* ページタイトル */
+.container h1 {
+    font-family: "kikai";
+    font-size: 2em;
+    color: #535b5f;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee; /* 下線 */
+    padding-bottom: 15px;
+}
+
+/* 日報リスト */
+.nippo-list ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 50px;
+}
+
+.nippo-list li {
+    padding: 10px 0;
+
+    /* ★ここから追加・修正★ */
+    display: flex; /* 子要素をフレックスアイテムにする */
+    align-items: center; /* 縦方向の中央揃え */
+     gap: 15px; /* ★追加: 日付とタイトルの間に直接的な隙間を作る */
+    /* ★ここまで追加・修正★ */
+}
+
+.nippo-list li:last-child {
+    border-bottom: none;
+}
+
+.nippo-list a {
+    font-family: "kikai";
+    text-decoration: none;
+
+    font-size: 1.2em;
+    color: #629caf;;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nippo-list a:hover {
+    color: #268aa3;
+}
+
+.nippo-date {
+    font-family: "kikai";
+    font-size: 0.8em;
+    color: #666;
+    width: 100px;  /* ★オプション: 日付の幅を固定したい場合（例）*/
+    text-align: left; /* ★オプション: 日付のテキストを右寄せにしたい場合（日付の幅が固定の場合に特に有効） */
+}
+
+/* 個別日報コンテンツ */
+.nippo-content h2 {
+    font-size: 1.8em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.nippo-content p {
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+    font-size: 1.05em;
+}
+
+
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    .container h1 {
+        font-size: 1.6em;
+    }
+
+    .nippo-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px; /* スマホ時の間隔 */
+    }
+    .nippo-list a {
+        margin-right: 0; /* 再度リセット */
+        margin-bottom: 0; /* gapがあるので基本的に0 */
+    }
+    .nippo-content h2 {
+        font-size: 1.5em;
+    }
+    .nippo-content p {
+        font-size: 1em;
+    }
+    .nippo-date {
+        /* スマホで縦並びの時は日付も左寄せにしたい場合 */
+        text-align: left;
+    }
+}
