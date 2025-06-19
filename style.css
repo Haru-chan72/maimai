@@ -1,0 +1,217 @@
+/* リセットCSS (基本的なスタイルを初期化) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "hiko";
+    src: url(font/HikomiFont20240212.ttf)format('truetype');
+}
+
+@font-face {
+    font-family: "kikai";
+    src: url(font/KikaiChokokuJIS-Md.otf)format("opentype");
+}
+
+@font-face {
+    font-family: "felt";
+    src: url(font/f_feltpen04.otf);
+}
+@font-face {
+    font-family: "sure";
+    src: url(font/SawarabiGothic-Regular.ttf)format('truetype');
+}
+
+body {
+    font-family: "kikai",sans-serif;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+/* ヒーローイメージ（背景画像） */
+.hero-image {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('images/しつがいき.png'); /* ここに表示したい画像ファイルのパスを指定してください */
+    background-size: 100% auto; /* ★追加: 幅50%、高さは自動で比率を維持 */
+    background-repeat: no-repeat; /* ★追加: 画像を繰り返さない */
+    background-position: right;
+    position: relative;
+     position: relative; /* 子要素の絶対配置の基準になる */
+
+
+    /* ★ここから追加★ */
+    opacity: 0; /* 初期状態は透明 */
+    transition: opacity 1.5s ease-in-out; /* 1.5秒かけてゆっくりフェードイン */
+    /* ★ここまで追加★ */
+}
+
+/* ★ここから追加: フェードイン後の状態★ */
+.hero-image.is-loaded {
+    opacity: 1; /* ロード後に不透明にする */
+}
+
+/* ヘッダー */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px; /* 適宜調整 */
+    z-index: 1000; /* ハンバーガーメニューが他の要素の上に表示されるように */
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ハンバーガーメニューアイコン */
+.hamburger-menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* 3つのバーを均等に配置 */
+    cursor: pointer;
+    position: relative; /* ×マークの変換用 */
+
+    
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #FFFFFE; /* 線の色 */
+    transition: all 0.3s ease;
+
+    
+    /* ★ここから追加★ */
+    box-shadow: 0 1px 3px rgba(61, 61, 61, 0.651); /* Xオフセット, Yオフセット, ぼかし半径, 影の色 */
+    /* ★ここまで追加★ */
+}
+
+/* ハンバーガーメニューが開いた時のスタイル (×マーク) */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(10.1px) rotate(45deg); /* 中央のバーの位置に合わせて調整 */
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0; /* 中央のバーを非表示に */
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-10.1px) rotate(-45deg); /* 中央のバーの位置に合わせて調整 */
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -225vw; /* 普段は画面外に隠す */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255); /* 半透明の黒 */
+    transition: left 0.3s ease-in-out;
+    z-index: 999; /* ハンバーガーメニューより下 */
+    padding-top: 80px; /* ヘッダー分スペースを空ける */
+}
+
+.nav-menu.open {
+    left: 0; /* 開いた時に画面内にスライド */
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.nav-menu ul li {
+    padding: 20px 20px;
+    border-bottom: 1px solid rgba(141, 141, 141, 0);
+}
+
+.nav-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu ul li a {
+    font-family: "hiko";
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    font-size: 1.1em;
+    display: inline-block; /* ★追加: インラインブロック要素にする */
+    padding: 5px 10px; /* ★追加: ホバー背景に余白を持たせる */
+    border-radius: 1px; /* ★追加: ホバー背景の角を丸くする（任意） */
+    transition: color 0.2s ease,background-color 0.2s ease;
+}
+
+
+.nav-menu ul li a:hover {
+    color: white; /* ホバー時の色 */
+    background-color: #72a4b4;;
+}
+
+/* ★ここから追加★ */
+.site-title-vertical {
+    font-family: sans-serif;
+    position: absolute; /* 親要素（.hero-image）に対する絶対位置指定 */
+    top: 50%; /* 縦方向の中央に配置 */
+    right: 83%; /* 右端からの距離 */
+    transform: translateY(-50%); /* 自身の高さの半分だけ上にずらして厳密に中央揃え */
+    z-index: 50; /* 必要に応じて調整。背景より上、メニューより下 */
+    color: white; /* 文字色 */
+
+    /* ★ここを修正: clamp() 関数を使用★ */
+    font-size: clamp(10px, 4.5vw, 100px); /* 例: 最小20px, 画面幅の5vw, 最大60px */
+    /* - 最小値: 20px (これより小さくならない)
+       - 推奨値: 5vw (ビューポート幅の5%。画面幅に応じて変化)
+       - 最大値: 60px (これより大きくならない)
+    */
+    /* ★修正終わり★ */
+
+    font-weight: bold; /* 文字の太さ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 文字の影 */
+    
+    writing-mode: vertical-rl; /* 縦書き（右から左へ） */
+    -ms-writing-mode: tb-rl; /* IE対応 */
+    text-orientation: upright; /* 英数字の向き（文字の種類によって調整） */
+    white-space: nowrap; /* テキストを改行させない */
+}
+
+/* --- スクロールバーのカスタマイズ (Webkit系ブラウザ向け) --- */
+
+/* スクロールバー全体の幅/高さ */
+::-webkit-scrollbar {
+    width: 10px;  /* 縦のスクロールバーの幅 */
+    height: 10px; /* 横のスクロールバーの高さ */
+}
+
+/* スクロールバーのトラック (背景部分) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* トラックの背景色 */
+    border-radius: 10px; /* 角を丸くする */
+}
+
+/* スクロールバーのつまみ (ドラッグする部分) */
+::-webkit-scrollbar-thumb {
+    background: #888; /* つまみの色 */
+    border-radius: 10px; /* 角を丸くする */
+    border: 2px solid #f1f1f1; /* トラックとの境界線（トラックの色と同じにすると一体感が出る） */
+}
+
+/* スクロールバーのつまみをホバーした時 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* ホバー時の色 */
+}
+
+/* スクロールバーの角 (Firefoxなど一部でサポート) */
+/* ::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+} */
+
+/* スマートフォン向けの調整 (必要に応じて) */
+@media (max-width: 768px) {
+    /* 特に大きな変更は不要ですが、必要に応じて調整できます */
+}

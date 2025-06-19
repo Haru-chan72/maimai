@@ -1,0 +1,87 @@
+    body {
+            font-family: "kikai";
+            background-color: #FFFFFE; /* 明るい水色系の背景 */
+            color: #666;
+            padding-top: 60px; /* ヘッダーの高さ分、上からの余白 */
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 350px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .container h1 {
+            font-size: 2.2em;
+            color: #535b5f;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+        .container h2 {
+            font-size: 1.5em;
+            color: #629caf;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 5px solid #629caf;
+            padding-left: 10px;
+        }
+        .container p {
+            margin-bottom: 1em;
+            font-size: 1.05em;
+        }
+
+        .container ul { /* 新しく追加したリストに適用 */
+        list-style: none; /* ★ここを追加★ */
+        padding-left: 20px; /* 必要であればインデントを調整 */
+        }
+
+        /* ... その他のスタイル ... */
+
+.image-with-caption {
+    /* image-with-caption 自体はコンテンツ幅に合わせ、中央寄せにしない */
+    margin: 20px 0; /* ★画像とキャプションのまとまりを中央に配置するならこうする★ */
+    /* もしdiv自体も左寄せなら margin: 20px 0; */
+    width: fit-content; /* ★追加: divの幅をコンテンツ（画像）の幅に合わせる★ */
+    display: block; /* ★追加: 中央寄せのためにブロック要素にする★ */
+}
+
+.image-with-caption img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* ★中央寄せの画像にしたい場合、margin-left/rightをautoに★ */
+    /* もし画像を左寄せにしたい場合は margin: 0 0 10px 0; */
+}
+
+.image-with-caption .caption {
+    font-size: 0.8em;
+    color: #777;
+    text-align: center; /* ★pタグのテキストは中央寄せ★ */
+    display: block;
+}
+
+/* ... その他のスタイル ... */
+
+        
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10 auto;
+                padding: 15px;
+            }
+            .container h1 {
+                font-size: 1.8em;
+            }
+            .container h2 {
+                font-size: 1.3em;
+            }
+            .container p {
+                font-size: 1em;
+            }
+        }
