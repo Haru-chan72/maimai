@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギャラリー - My Simple Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css"> </head>
+<body>
+    <header>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <nav class="nav-menu" id="nav-menu">
+        <ul>
+            <li><a href="nippo.html">日報を読む</a></li>
+            <li><a href="my_gallery.html">ギャラリーを見る</a></li>
+            <li><a href="my_thread.html">ひとりスレッド</a></li>
+            <li><a href="kokoha.html">ここは何？</a></li>
+        </ul>
+    </nav>
+    <script src="script.js"></script>
+
+    <div class="container">
+        <h1>ギャラリー</h1>
+
+        <div class="tag-filters">
+            <button class="tag-button active" data-tag="all">すべて</button>
+            <button class="tag-button" data-tag="オリジナル">オリジナル</button>
+            <button class="tag-button" data-tag="ファンアート">ファンアート</button>
+            <button class="tag-button" data-tag="イラスト">イラスト</button>
+            <button class="tag-button" data-tag="ドット絵">ドット絵</button>
+            <button class="tag-button" data-tag="アニカビ">アニカビ</button>
+            <button class="tag-button" data-tag="てやんでえ">てやんでえ</button>
+            <button class="tag-button" data-tag="どこいつ">どこいつ</button>
+            <button class="tag-button" data-tag="その他">その他</button>
+            </div>
+
+         <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item" data-tags="ファンアート その他 ドット絵" data-index="0">
+                <img src="images/dotpict_20250624_225211.png" alt="ギャグ日 妹子" data-full-src="images/dotpict_20250624_225211.png">
+            </div>
+            <div class="gallery-item" data-tags="ファンアート アニカビ ドット絵" data-index="1">
+                <img src="images/dotpict_20250625_204334.png" alt="アニカビ デデデ" data-full-src="images/dotpict_20250625_204334.png">
+            </div>
+            <div class="gallery-item" data-tags="ファンアート てやんでえ ドット絵" data-index="2">
+                <img src="images/dotpict_animation_20250626_125849.gif"f alt="てやんでえ ヤッ太郎" data-full-src="images/dotpict_animation_20250626_125849.gif">
+            </div>
+            <div class="gallery-item" data-tags="オリジナル その他 ドット絵" data-index="3">
+                <img src="images/dotpict_animation_20250629_202912.gif" alt="オウサマペンギン" data-full-src="images/dotpict_animation_20250629_202912.gif">
+            </div>
+            <div class="gallery-item" data-tags="ファンアート アニカビ ドット絵" data-index="4">
+                <img src="images/エスカルゴン.gif" alt="アニカビ エスカルゴン" data-full-src="images/エスカルゴン.gif">
+            </div>
+            <div class="gallery-item" data-tags="ファンアート どこいつ ドット絵" data-index="5">
+                <img src="images/スズキ.gif" alt="どこいつ スズキ" data-full-src="images/スズキ.gif">
+            </div>
+            <div class="gallery-item" data-tags="ファンアート その他 ドット絵" data-index="6">
+                <img src="images/マイちゃん.gif" alt="マジカルエミ 舞ちゃんとトポ" data-full-src="images/マイちゃん.gif">
+            </div>
+            <div class="gallery-item" data-tags="オリジナル ドット絵" data-index="7">
+                <img src="images/シェーファーちゃん.gif" alt="シェーファーちゃん" data-full-src="images/シェーファーちゃん.gif">
+            </div>
+            <div class="gallery-item" data-tags="オリジナル ドット絵" data-index="8">
+                <img src="images/ぽんとD氏.gif" alt="シェーファーちゃん" data-full-src="images/ぽんとD氏.gif">
+            </div>
+            <div class="gallery-item" data-tags="オリジナル イラスト" data-index="9">
+                <img src="images/しつがいき.png" alt="しつがいき" data-full-src="images/しつがいき.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <a class="prev-button">&#10094;</a> <img class="modal-content" id="modalImage">
+        <a class="next-button">&#10095;</a> </div>
+
+    <script src="gallery.js"></script>
+    <a href="#" id="backToTopButton" class="back-to-top-fixed">↑</a> 
+</body>
+</html>

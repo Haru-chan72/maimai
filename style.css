@@ -215,3 +215,35 @@ header {
 @media (max-width: 768px) {
     /* 特に大きな変更は不要ですが、必要に応じて調整できます */
 }
+
+/* style.css の末尾などに追加 */
+
+/* style.css の末尾などに追加 */
+
+/* トップに戻るボタンのスタイル */
+.back-to-top-fixed {
+    display: none; /* 初期状態では非表示 */
+    position: fixed; /* 画面に固定 */
+    bottom: 20px; /* 下からの距離 */
+    right: 20px; /* 右からの距離 */
+    background-color: #73b1ce; /* ボタンの背景色 */
+    color: white; /* 文字色 */
+    padding: 12px 12px; /* パディング */
+    border-radius: 30%; /* 円形にする */
+    text-align: center;
+    text-decoration: none; /* 下線をなくす */
+    font-size: 1.2em;
+    line-height: 1; /* テキストの行高さを調整 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影 */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* ホバーと表示/非表示のアニメーション */
+    z-index: 999; /* 他の要素より手前に表示 */
+    opacity: 0; /* 初期は完全に透明 */
+    pointer-events: none; /* 非表示時はクリックできないように */
+}
+
+/* ボタンが表示されるときのスタイル */
+.back-to-top-fixed.show {
+    display: block; /* 表示 */
+    opacity: 1; /* 不透明に */
+    pointer-events: auto; /* クリックできるように */
+}
